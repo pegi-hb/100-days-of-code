@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-color: #131319;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#clock {
+    font-family: Lobster;
+    font-size: 150px;
+    color: transparent;
+    background-image: linear-gradient(to right, #FBDA61, #FF5ACD);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
