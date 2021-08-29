@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>RGB Selector</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="picker">
+            <div class="wrapper">
+                <div class="color"></div>
+                <span class="rgb">rgb(0,0,0)</span>
+                <span class="hex">#000000</span>
+            </div>
+            <div class="inputs">
+                <label>
+                    <span>R</span>
+                    <input class="rngRed" name="red" type="range" min="0" max="255" value="0"/>
+                </label>
+                <label>
+                    <span>G</span>
+                    <input class="rngGreen" name="green" type="range" min="0" max="255" value="0"/>
+                </label>
+                <label>
+                    <span>B</span>
+                    <input class="rngBlue" name="blue" type="range" min="0" max="255" value="0"/>
+                </label>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
