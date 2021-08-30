@@ -1,0 +1,60 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window {
+    width: 500px;
+    height: 350px;
+    background-color: rgba(255,255,255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.window header {
+    background: linear-gradient(to bottom, #ebf4f3, #e1dfe2);
+    border-bottom: 1px solid #c3c1c4;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+.window header .controls {
+    display: flex;
+    gap: 4px;
+}
+
+.window header .controls button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+.window header .controls .close {
+    background-color: #ff3b30;
+    border: 1px solid #ef2b20;
+}
+.window header .controls .minimize {
+    background-color: #ff9500;
+    border: 1px solid #ef8500;
+}
+.window header .controls .maximize {
+    background-color: #34c759;
+    border: 1px solid #24b749;
+}
