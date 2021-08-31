@@ -85,3 +85,11 @@ document.addEventListener('keypress', (e) => {
 document.querySelector('.reset').addEventListener('click', () => {
     ctx.clearRect(0,0, canvas.width, canvas.height);
 });
+
+document.querySelector('.eraser').addEventListener('input', (e) => {
+    if (e.target.checked) {
+        ctx.globalCompositeOperation = 'destination-out';
+    } else {
+        ctx.globalCompositeOperation = 'source-over';
+    }
+});
