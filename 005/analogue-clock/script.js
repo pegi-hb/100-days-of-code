@@ -67,8 +67,6 @@ function initHands() {
     hands.appendChild(pivot);
 
     clock.appendChild(hands);
-
-    return [hourHand, minuteHand, secondHand];
 }
 
 function showTime() {
@@ -82,14 +80,14 @@ function showTime() {
     const ma = (m + s / 60) * 6;
     const sa = (s + ms / 1000) * 6;
 
-    hh.style.transform = `rotateZ(${ha}deg)`;
-    mh.style.transform = `rotateZ(${ma}deg)`;
-    sh.style.transform = `rotateZ(${sa}deg)`;
+    document.documentElement.style.setProperty('--hour-hand-rotation', `${ha}deg`);
+    document.documentElement.style.setProperty('--minute-hand-rotation', `${ma}deg`);
+    document.documentElement.style.setProperty('--second-hand-rotation', `${sa}deg`);
 }
 
 initDots();
 initNumbers();
-const [hh, mh, sh] = initHands();
+initHands();
 showTime();
 
 setInterval(showTime, 50);

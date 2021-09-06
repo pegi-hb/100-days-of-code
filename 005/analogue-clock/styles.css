@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap');
 
+:root {
+    --hour-hand-rotation: 0deg;
+    --minute-hand-rotation: 0deg;
+    --second-hand-rotation: 0deg;
+}
+
 html {
     height: 100%;
 }
@@ -66,17 +72,17 @@ body {
     width: 10px;
     height: 120px;
     background-color: #8e8e93;
-    margin-left: -5px;
+    transform: translateX(-50%) rotateZ(var(--hour-hand-rotation));
 }
 .clock .hands .hand.minute {
     width: 6px;
     height: 150px;
     background-color: #6e6e73;
-    margin-left: -3px;
+    transform: translateX(-50%) rotateZ(var(--minute-hand-rotation));
 }
 .clock .hands .hand.second {
     width: 2px;
     height: 180px;
     background-color: darkgoldenrod;
-    margin-left: -1px;
+    transform: translateX(-50%) rotateZ(var(--second-hand-rotation));
 }
