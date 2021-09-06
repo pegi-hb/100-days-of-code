@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap');
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Karla, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #454545;
+}
+.clock {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(145deg, #3e3e3e, #4a4a4a);
+    box-shadow: 7px 7px 21px #333333,
+    -7px -7px 21px #575757;
+}
+
+.clock .dots .dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #8e9eab;
+    transform: translate(-50%, -50%);
+}
+.clock .dots .dot.big {
+    width: 8px;
+    height: 8px;
+}
+.clock .nums .num {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #8e9eab;
+    font-family: Karla, sans-serif;
+    font-size: 23px;
+}
+.clock .nums .num.big {
+    font-size: 32px;
+}
+
+.clock .hands .pivot {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #aeaec3;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.clock .hands .hand {
+    position: absolute;
+    border-radius: 10px 10px 0 0;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+}
+.clock .hands .hand.hour {
+    width: 10px;
+    height: 120px;
+    background-color: #8e8e93;
+    margin-left: -5px;
+}
+.clock .hands .hand.minute {
+    width: 6px;
+    height: 150px;
+    background-color: #6e6e73;
+    margin-left: -3px;
+}
+.clock .hands .hand.second {
+    width: 2px;
+    height: 180px;
+    background-color: darkgoldenrod;
+    margin-left: -1px;
+}
