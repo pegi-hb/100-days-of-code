@@ -105,20 +105,20 @@ header.menu-open nav .menubar div:nth-of-type(3) {
 .menu.open {
     transform: translateX(0);
 }
-.menu.open ul {
+.menu ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 80px;
 }
-.menu.open ul li {
+.menu ul li {
     color: honeydew;
     font-family: Roboto;
     font-size: 50px;
     font-weight: 700;
     position: relative;
 }
-.menu.open ul li::before {
+.menu ul li::before {
     content: '';
     display: block;
     position: absolute;
@@ -130,7 +130,7 @@ header.menu-open nav .menubar div:nth-of-type(3) {
     transform: translate(-50%, 0);
     transition: width 0.3s ease-in-out;
 }
-.menu.open ul li:hover::before {
+.menu ul li:hover::before {
     width: 100%;
 }
 
