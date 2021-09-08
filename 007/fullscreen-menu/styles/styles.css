@@ -1,0 +1,234 @@
+body {
+    background-color: #fefefe;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+}
+
+header .logo {
+    font-family: Lobster;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 20px;
+    display: block;
+    transition: color 0.5s ease-in-out;
+}
+header.menu-open .logo {
+    color: snow;
+}
+
+
+header nav {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+header nav button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: #d8778a;
+    color: #f7f7f7;
+    padding: 8px 20px;
+    font-size: 13px;
+    line-height: 1;
+    border-radius: 14px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+header.menu-open nav button {
+    opacity: 0;
+}
+header nav .menubar {
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+header nav .menubar div{
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, background-color 0.5s ease-in-out 0.5s;
+}
+header.menu-open nav .menubar div:nth-of-type(1) {
+   transform: rotateZ(45deg) translate(0px, 5px);
+   background-color: snow;
+}
+header.menu-open nav .menubar div:nth-of-type(2) {
+    transform: rotateZ(-45deg) translate(0px, -6px);
+    background-color: snow;
+
+}
+header.menu-open nav .menubar div:nth-of-type(3) {
+    opacity: 0;
+    transform: translate(0px, 10px);
+}
+
+
+.menu {
+    inset: 0px;
+    position: fixed;
+    background-color: rgba(57, 48, 48, 0.7);
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+
+}
+.menu.open {
+    transform: translateX(0);
+}
+.menu.open ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+.menu.open ul li {
+    color: honeydew;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 700;
+    position: relative;
+}
+.menu.open ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    background-color: snow;
+    height: 1px;
+    transform: translate(-50%, 0);
+    transition: width 0.3s ease-in-out;
+}
+.menu.open ul li:hover::before {
+    width: 100%;
+}
+
+
+
+main {
+    padding: 0 60px;
+}
+
+main > img {
+    height: 70vh;
+    position: absolute;
+    right: 60px;
+    top: 120px;
+}
+
+main article {
+    width: 40vw;
+    margin-top: 100px;
+}
+main article h1 {
+    font-weight: 700;
+    font-size: 4em;
+    line-height: 0.85;
+    margin-bottom: 30px;
+}
+main article .about {
+    width: 100px;
+}
+main article h1 span {
+    font-weight: 300;
+    font-size: 3rem;
+}
+main article p {
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+main article button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    color: #f7f7f7;
+    background-color: #e38b9b;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 18px 30px;
+    border-radius: 0 26px 26px 26px;
+    cursor: pointer;
+}
+
+main .products {
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+}
+main .products .product {
+    border: 1px solid lightgray;
+    margin-right: 30px;
+    display: flex;
+    padding: 30px;
+    border-radius: 30px;
+    min-width: 270px;
+}
+main .products .product img {
+    height: 120px;
+    margin-top: -60px;
+}
+main .products .product .info {
+    display: flex;
+    flex-direction: column;
+}
+main .products .product .info .title {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+main .products .product .info .price {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+main .products .product .info .discount {
+    font-size: 0.8rem;
+}
+main .products button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    color: #f7f7f7;
+    background-color: #e18594;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+main .products button svg {
+    width: 10px;
+}
