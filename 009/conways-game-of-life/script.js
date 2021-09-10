@@ -10,9 +10,9 @@ const cellGap = 1;
 const columnCount = Math.ceil(width / (cellSize + cellGap));
 const rowCount = Math.ceil(height / (cellSize + cellGap));
 
-const liveCellColor = 'gold';
-const deadCellColor = '#555';
-const backgroundColor = '#222';
+const liveCellColor = '#ff453a';
+const deadCellColor = '#222';
+const backgroundColor = '#333';
 
 function createMatrix() {
     return new Array(rowCount).fill(0).map(() => new Array(columnCount).fill(false));
@@ -21,14 +21,13 @@ function createMatrix() {
 function getLiveNeighborsCount(i, j) {
     let c = 0;
 
-    const klb = i - 1 < 0 ? 0 : i - 1;
-    const kub = i + 1 >= rowCount ? rowCount - 1 : i + 1;
-    const llb = j - 1 < 0 ? 0 : j - 1;
-    const lub = j + 1 >= columnCount ? columnCount - 1 : j + 1;
+    for (let k = i - 1; k <= i + 1; k++) {
+        const m = k < 0 ? rowCount + k : k >= rowCount ? k - rowCount : k;
 
-    for (let k = klb; k <= kub; k++) {
-        for (let l = llb; l <= lub; l++) {
-            if (!(k === i && l === j) && currentGeneration[k][l]) {
+        for (let l = j - 1; l <= j + 1; l++) {
+            const n = l < 0 ? columnCount + l : l >= columnCount ? l - columnCount : l;
+
+            if (!(k === i && l === j) && currentGeneration[m][n]) {
                 c++;
             }
         }
@@ -102,14 +101,27 @@ function tick() {
 }
 let interval;
 let isPlaying = false;
-document.addEventListener('keypress', (e) => {
+let timing = 100;
+document.addEventListener('keyup', (e) => {
     if (e.key === ' ') {
         if (isPlaying) {
             clearInterval(interval);
             isPlaying = false;
         } else {
-            interval = setInterval(tick, 100);
+            interval = setInterval(tick, timing);
             isPlaying = true;
+        }
+    }
+
+    if (isPlaying) {
+        if (e.key === 'ArrowUp') {
+            timing -= 10;
+            clearInterval(interval);
+            interval = setInterval(tick, timing);
+        } else if (e.key === 'ArrowDown') {
+            timing += 10;
+            clearInterval(interval);
+            interval = setInterval(tick, timing);
         }
     }
 });
