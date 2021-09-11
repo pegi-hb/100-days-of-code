@@ -1,0 +1,9 @@
+@import 'assets/fonts.css';
+@import 'assets/reset.css';
+@import 'assets/colors.css';
+@import 'assets/global.css';
+
+@import 'ui/button.css';
+@import 'ui/switch.css';
+
+@import 'main.css';

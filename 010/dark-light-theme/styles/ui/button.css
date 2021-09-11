@@ -1,0 +1,28 @@
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: 2px solid transparent;
+  padding: 14px 20px;
+  border-radius: 23px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--gray6);
+  transition: 0.3s ease-in-out;
+  transition-property: background-color, color, border-color;
+}
+.btn:hover {
+  color: var(--gray2);
+}
+.btn.outlined {
+  border-color: var(--gray8);
+}
+.btn.contained {
+  background: var(--gray1);
+  color: var(--gray12);
+  border-color: var(--gray1);
+}
