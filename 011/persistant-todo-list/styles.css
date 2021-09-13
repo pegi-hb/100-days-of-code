@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto;400,600&display=swap');
+@import url('./colors.css');
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray1);
+}
+.todo-list {
+    width: 450px;
+    height: 600px;
+    background-color: var(--gray2);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.todo-list header {
+    display: flex;
+    gap: 10px;
+}
+.todo-list .box {
+    flex-grow: 1;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: var(--gray3);
+    color: var(--gray12);
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+.todo-list .add {
+    font-family: Roboto, sans-serif;
+    padding: 5px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: var(--darkBlue);
+    color: var(--gray12);
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.todo-list .list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    flex-direction: column;
+
+}
+.todo-list .list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--gray3);
+    padding: 10px;
+    color: var(--gray9);
+}
+.todo-list .list li:hover button {
+    opacity: 1;
+}
+.todo-list .list li input[type='checkbox'] {
+    display: none;
+}
+.todo-list .list li input[type='checkbox'] + label {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: var(--gray3);
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.todo-list .list li input[type='checkbox']:checked + label {
+    background: var(--darkBlue);
+}
+.todo-list .list li input[type='checkbox']:checked ~ span {
+    text-decoration: line-through;
+}
+.todo-list .list li span {
+    flex-grow: 1;
+}
+
+.todo-list .list li button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px;
+    color: var(--gray6);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.todo-list .list li button:hover {
+    color: var(--darkRed);
+}
+.todo-list .list li button svg {
+    width: 16px;
+    fill: currentColor;
+}
