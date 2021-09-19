@@ -58,7 +58,17 @@ body {
     list-style-type: none;
     padding: 0;
     flex-direction: column;
-
+    overflow-y: auto;
+    margin-bottom: 0;
+    padding-right: 20px;
+}
+.todo-list .list::-webkit-scrollbar {
+    width: 10px;
+}
+.todo-list .list::-webkit-scrollbar-thumb {
+    width: 100%;
+    background-color: var(--gray3);
+    border-radius: 20px;
 }
 .todo-list .list li {
     display: flex;
